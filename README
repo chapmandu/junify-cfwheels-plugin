@@ -1,0 +1,33 @@
+JUnify
+
+Make the CFWheels test framework return jUnit XML
+
+JUnify will run your CFWheels unit tests, then return the results in jUnit formatted XML. Use it for automated testing with your Continuous Integration server.
+
+Following the road to jUnit Glory
+- Install the JUnify plugin
+- Create a JUnifyController.cfc controller that calls the JUnify() function*. (See example below)
+- Write some unit tests for your app or plugin
+- Make a call to your JUnify url
+
+* Controller filename and action names are unimportant
+
+JUnifyController.cfc
+
+<cfcomponent extends="Controller">
+	
+	<cffunction name="index">
+		<cfset JUnify(params)>
+	</cffunction>
+		
+</cfcomponent>
+
+Your JUnify URL
+http://yourserver/index.cfm?controller=junifycontroller&action=index&type=app
+
+Pay particular attention to the type parameter.
+- type=app will run tests for your application
+- type=myplugin will run tests for your plugin
+- type=core will run tests for the CFWheels framework itself
+	
+Props to Rocketboots for their RocketUnit test framework
