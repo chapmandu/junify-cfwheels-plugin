@@ -6,7 +6,7 @@
 	</cffunction>
 	
 	<cffunction name="JUnifyVersion" returntype="string" access="public" output="false">
-		<cfreturn "0.1" />
+		<cfreturn "1.0" />
 	</cffunction>
 	
 	<cffunction name="JUnify" access="public" returntype="string" output="false">
