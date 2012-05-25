@@ -1,4 +1,4 @@
-﻿<cfcomponent output="false" mixin="controller">
+<cfcomponent output="false" mixin="controller">
 
 	<cffunction name="init" returntype="any" access="public" output="false">
 		<cfset this.version = "1.1.7">
@@ -6,7 +6,7 @@
 	</cffunction>
 	
 	<cffunction name="JUnifyVersion" returntype="string" access="public" output="false">
-		<cfreturn "1.0" />
+		<cfreturn "1.0.1" />
 	</cffunction>
 	
 	<cffunction name="JUnify" access="public" returntype="string" output="false">
@@ -15,7 +15,9 @@
 		
 		<cfcontent reset="yes" type="text/xml">
 		<cfsetting showdebugoutput="false">
-		
+		<!--- sorry, but this is for your own good --->
+		<cfset set(showDebugInformation=false)>
+
 		<cfif ! StructKeyExists(arguments.params,"type")>
 			<cfset arguments.params.type = "core">
 		</cfif>
